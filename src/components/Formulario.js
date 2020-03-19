@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Formulario = ({crearCita}) => {
 
-
     //Create State de Citas
     const [cita, actualizarCita] = useState({
         mascota: '',
