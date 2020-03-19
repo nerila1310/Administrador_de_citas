@@ -1,6 +1,7 @@
 import React,{Fragment, useState, useEffect} from 'react';
 import Formulario from './components/Formulario'; 
 import Cita from './components/Cita';
+import PropTypes from 'prop-types';
 
 function App() {
 
@@ -15,6 +16,8 @@ function App() {
 
 	//useEffect para realizar ciertas operaciones cuando el state cambia
 	useEffect( () => {
+		let citasIniciales = JSON.parse(localStorage.getItem('citas'));
+		
 		if(citasIniciales){
 			localStorage.setItem('citas', JSON.stringify(citas))
 		}else{
@@ -64,5 +67,11 @@ function App() {
 		</Fragment>
   	);
 }
+
+Formulario.propTypes = {
+
+	crearCita: PropTypes.func.isRequired
+}
+
 
 export default App;
